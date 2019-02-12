@@ -21,16 +21,13 @@ gulp.task('server', function () {
     port: "3000"
   });
 
-  gulp.watch(['./src/*.html']).on('change', browserSync.reload);
-  gulp.watch('./src/style/**/*', ['sass']);
-  gulp.watch('./src/**/**/*', ['html-transfer']);
-  gulp.watch('./src/fonts/**/*', ['fonts-transfer']);
-  gulp.watch('./src/img/**/*', ['img-transfer']);
+  gulp.watch(['./*.html']).on('change', browserSync.reload);
+  gulp.watch('./style/**/*', ['sass']);
 });
 
 // компиляция sass/scss в css
 gulp.task('sass', function () {
-  gulp.src(['./src/style/**/*.scss', './src/style/**/*.sass'])
+  gulp.src(['./style/**/*.scss', './style/**/*.sass'])
     .pipe(sourcemaps.init())
     .pipe(
       sass({outputStyle: 'expanded'})
@@ -43,47 +40,29 @@ gulp.task('sass', function () {
       browsers: ['last 3 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('./dist/css/'))
+    .pipe(gulp.dest('./css/'))
     .pipe(browserSync.stream());
 });
 
-
-// перемещение html в dist
-gulp.task('html-transfer', function () {
-  gulp.src('./src/**/*.html')
-    .pipe(gulp.dest('./dist'))
-});
-
-// перемещение images в dist
-gulp.task('img-transfer', function () {
-  gulp.src('./src/img/**/*')
-    .pipe(gulp.dest('./dist/img'))
-});
-
-//перемещение шрифтов в dist
-gulp.task('fonts-transfer', function () {
-  gulp.src('./src/fonts/*.{eot,svg,ttf,woff,woff2}')
-    .pipe(gulp.dest('./dist/fonts'));
-});
 
 //////BUILD//////
 
 // сжатие картинок
 gulp.task('minify:img', function () {
-  return gulp.src(['./dist/img/**/*'])
+  return gulp.src(['./img/**/*'])
     .pipe(imagemin().on('error', gutil.log))
-    .pipe(gulp.dest('./build/img/'));
+    .pipe(gulp.dest('./dist/img/'));
 });
 
 // сжатие css
 gulp.task('minify:css', function () {
-  gulp.src('./dist/css/**/*.css')
+  gulp.src('./css/**/*.css')
     .pipe(autoprefixer({
       browsers: ['last 5 versions'],
       cascade: false
     }))
     .pipe(csso())
-    .pipe(gulp.dest('./build/css/'));
+    .pipe(gulp.dest('./dist/css/'));
 });
 
 // сжатие html
@@ -93,24 +72,24 @@ gulp.task('minify:html', function () {
     spare: true
   };
 
-  return gulp.src(['./dist/*.html'])
+  return gulp.src(['./*.html'])
     .pipe(minifyHTML(opts))
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./dist'));
 });
 
-//перемещение шрифтов в build
-gulp.task('fonts-build', function () {
-  gulp.src('./dist/fonts/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe(gulp.dest('./build/fonts/'));
+//перемещение шрифтов в dist
+gulp.task('fonts-transfer', function () {
+  gulp.src('./fonts/**/*.{eot,svg,ttf,woff,woff2}')
+    .pipe(gulp.dest('./dist/fonts/'));
 });
 
-// удалить папку build
+// удалить папку dist
 gulp.task('clean', function () {
-  return gulp.src('./build', {read: false}).pipe(clean());
+  return gulp.src('./dist', {read: false}).pipe(clean());
 });
 
 // запуск gulp
-gulp.task('default', ['server', 'sass', 'html-transfer', 'fonts-transfer', 'img-transfer']);
+gulp.task('default', ['server', 'sass']);
 
-// при вызове gulp build будут сжаты все ресурсы в build
-gulp.task('build', ['minify:html', 'minify:css', 'minify:img', 'fonts-build']);
+// при вызове gulp dist будут сжаты все ресурсы в dist
+gulp.task('dist', ['minify:html', 'minify:css', 'minify:img', 'fonts-transfer']);
