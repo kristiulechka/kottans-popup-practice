@@ -22,12 +22,12 @@ gulp.task('server', function () {
   });
 
   gulp.watch(['./*.html']).on('change', browserSync.reload);
-  gulp.watch('./style/**/*', ['sass']);
+  gulp.watch('./sass/**/*', ['sass']);
 });
 
 // компиляция sass/scss в css
 gulp.task('sass', function () {
-  gulp.src(['./style/**/*.scss', './style/**/*.sass'])
+  gulp.src(['./sass/**/*.scss', './sass/**/*.sass'])
     .pipe(sourcemaps.init())
     .pipe(
       sass({outputStyle: 'expanded'})
