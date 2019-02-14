@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 0;
+}
+
+.top-menu {
+  display: flex;
+  padding: 0 15px;
+
+  &__link-container {
+    line-height: 30px;
+    margin: 0 10px 0 0;
+    font-size: 13px;
+    font-family: sans-serif;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    transition: .1s;
+    color: rgba(0, 0, 0, 0.87);
+
+    &:hover {
+      text-decoration: underline;
+      opacity: .85;
+    }
+  }
+}
