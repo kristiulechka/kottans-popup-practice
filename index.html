@@ -19,42 +19,78 @@
       <label class="top-menu__popup-trigger" for="moreApps"></label>
       <div class="popup">
         <div class="popup__wrapper">
-          <ul class="popup-list">
+          <ul class="popup-list popup-list_visible">
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">My account</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Search</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Maps</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">КоTube</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">News</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Kmail</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Contacts</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Drive</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Calendar</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Kotogle+</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Translate</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Photos</span>
+              </a>
             </li>
           </ul>
           <input class="popup__input" type="checkbox" id="showHiddenApps" name="moreApps">
@@ -62,31 +98,40 @@
           <div class="divider"></div>
           <ul class="popup-list popup-list_hidden">
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Documents</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Blogger</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Messenger</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">KottanBoard</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">KottanClass</span>
+              </a>
             </li>
             <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
-            </li>
-            <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
-            </li>
-            <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
-            </li>
-            <li class="popup-list__item">
-              <a href="#" class="popup-list__link"></a>
+              <a href="#" class="popup-list__link">
+                <span class="popup-list__icon"></span>
+                <span class="span popup-list__text">Earth</span>
+              </a>
             </li>
           </ul>
           <a href="#" class="popup__link popup__link_other-product">Even more from Коtogle</a>
@@ -102,8 +147,14 @@
   </div>
 </div>
 <div class="search">
-  <div class="search__img-container">
-    <img src="../img/logo2.jpg" alt="" class="search__img">
+  <div class="search__wrapper">
+    <div class="search__img-container">
+      <img src="../img/logo.jpg" alt="" class="search__img">
+    </div>
+    <div class="search__field-container">
+      <input placeholder="Search Kotogle or type URL" type="text" class="search__field">
+      <span class="search__field-icon"></span>
+    </div>
   </div>
 </div>
 </body>
