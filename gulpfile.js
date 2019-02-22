@@ -44,9 +44,6 @@ gulp.task('sass', function () {
     .pipe(browserSync.stream());
 });
 
-
-//////BUILD//////
-
 // сжатие картинок
 gulp.task('minify:img', function () {
   return gulp.src(['./img/**/*'])
