@@ -48,7 +48,6 @@
   &-list {
     display: flex;
     flex-wrap: wrap;
-    //justify-content: space-between;
     padding: 28px 18px 28px 28px;
 
     &_hidden {
@@ -59,7 +58,7 @@
           &:first-child {
             .popup-list {
               &__icon {;
-                background: url("../img/avatar-popup.png") center 100% no-repeat;
+                background: url("../img/icons-popup.png") 0 -1449px no-repeat;
 
               }
             }
@@ -68,7 +67,7 @@
           &:nth-child(2) {
             .popup-list {
               &__icon {
-                background: url(../img/icons-popup.png) 0 -1311px no-repeat;
+                background: url(../img/icons-popup.png) 0 -2070px no-repeat;
               }
             }
           }
@@ -76,7 +75,7 @@
           &:nth-child(3) {
             .popup-list {
               &__icon {
-                background: url(../img/icons-popup.png) 0 -207px no-repeat;
+                background: url(../img/icons-popup.png) 0 -1587px no-repeat;
               }
             }
           }
@@ -84,7 +83,7 @@
           &:nth-child(4) {
             .popup-list {
               &__icon {
-                background: url(../img/icons-popup.png) 0 -207px no-repeat;
+                background: url(../img/icons-popup.png) 0 -897px no-repeat;
               }
             }
           }
@@ -92,7 +91,7 @@
           &:nth-child(5) {
             .popup-list {
               &__icon {
-                background: url(../img/icons-popup.png) 0 -207px no-repeat;
+                background: url(../img/icons-popup.png) 0 -621px no-repeat;
               }
             }
           }
@@ -100,7 +99,7 @@
           &:last-child {
             .popup-list {
               &__icon {
-                background: url(../img/icons-popup.png) 0 -207px no-repeat;
+                background: url(../img/icons-popup.png) 0 -1863px no-repeat;
               }
             }
           }
@@ -215,7 +214,6 @@
     &__item {
       width: 84px;
       height: 84px;
-      background: lightcoral;
       display: flex;
       justify-content: center;
 
