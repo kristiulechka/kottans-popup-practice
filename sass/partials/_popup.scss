@@ -10,7 +10,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
   background: #ffffff;
   flex-direction: column;
-  z-index: 9999;
+  z-index: 50;
 
   &:after,
   &:before {
@@ -176,7 +176,8 @@
   display: flex;
   justify-content: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     .popup-list__link {
       border: 1px solid #e5e5e5;
     }
@@ -210,12 +211,22 @@
 
   &:focus {
     border: 1px solid #e5e5e5;
+    outline: none;
   }
 }
 
 
 .popup__input {
-  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.popup__input:focus {
+  ~ .popup__trigger {
+    border: 1px solid #e5e5e5;
+  }
 }
 
 .popup__input:checked {
@@ -246,6 +257,7 @@
   box-sizing: border-box;
   text-align: center;
   font-size: 14px;
+  border: 1px solid transparent;
 
 }
 
